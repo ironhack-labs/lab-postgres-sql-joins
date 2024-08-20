@@ -97,11 +97,11 @@ CREATE TABLE authors (
     birth_year DATE
 );
 
-CREATE TABLE publishers (
+CREATE TABLE authors (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    location VARCHAR(100),
-    founded_year INT
+    nationality VARCHAR(50),
+    birth_year DATE
 );
 
 CREATE TABLE books (
@@ -172,7 +172,7 @@ After you run a query in your `psql` client and get the correct result, remember
 <br>
 
 1. Using an **INNER JOIN**, list all books (left table) that have an assigned author (right table). The result should include only books with assigned authors.
-<br>
+   <br>
 
 2. Using a **LEFT JOIN**, list all authors (left table) and their corresponding books on the (right table). The result should include all authors, including those who don't have any books assigned.
 
