@@ -10,6 +10,10 @@
 -- Your Query Goes Here
 ```
 
+SELECT books.id, books.title, authors.name AS author_name
+FROM books
+INNER JOIN authors ON books.author_id = authors.id;
+
 <br>
 
 2. Using a **LEFT JOIN**, list all authors (left table) and their corresponding books on the (right table). The result should include all authors, including those who don't have any books assigned.
@@ -17,6 +21,10 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT authors.id, authors.name AS author_name, books.title AS book_title
+FROM authors
+LEFT JOIN books ON authors.id = books.author_id;
+
 
 <br>
 
@@ -25,6 +33,9 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT books.id, books.title, authors.name AS author_name
+FROM authors
+RIGHT JOIN books ON authors.id = books.author_id;
 
 <br>
 
@@ -33,6 +44,9 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT books.id AS book_id, books.title, authors.id AS author_id, authors.name AS author_name
+FROM books
+FULL JOIN authors ON books.author_id = authors.id;
 
 <br>
 
@@ -43,6 +57,9 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT books.title, publishers.name AS publisher_name, publishers.location
+FROM books
+INNER JOIN publishers ON books.publisher_id = publishers.id;
 
 <br>
 
@@ -51,6 +68,9 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT publishers.name AS publisher_name, books.title AS book_title
+FROM publishers
+LEFT JOIN books ON publishers.id = books.publisher_id;
 
 <br>
 
@@ -59,6 +79,9 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT books.title AS book_title, publishers.name AS publisher_name
+FROM publishers
+RIGHT JOIN books ON publishers.id = books.publisher_id;
 
 <br>
 
@@ -67,5 +90,12 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT
+    authors.id AS author_id, authors.name AS author_name,
+    books.id AS book_id, books.title AS book_title,
+    publishers.id AS publisher_id, publishers.name AS publisher_name
+FROM authors
+FULL JOIN books ON authors.id = books.author_id
+FULL JOIN publishers ON books.publisher_id = publishers.id;
 
 <br>
