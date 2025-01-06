@@ -8,6 +8,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT books.title, authors.name AS author_name, publish_date 
+FROM books
+INNER JOIN authors ON books.author_id = authors.id;
 ```
 
 <br>
@@ -16,6 +19,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT  authors.name AS author_name, books.title AS book_title
+FROM authors
+LEFT JOIN books ON authors.id = books.author_id;
 ```
 
 <br>
@@ -24,6 +30,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT  books.title AS book_title, publish_date  ,authors.name AS author_name 
+FROM authors
+RIGHT JOIN books ON authors.id = books.author_id;
 ```
 
 <br>
@@ -32,6 +41,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT books.id AS book_id, books.title AS book_title, authors.id AS author_id, authors.name AS author_name
+FROM books
+FULL JOIN authors ON books.author_id = authors.id;
 ```
 
 <br>
@@ -42,6 +54,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT books.title AS book_title, publishers.name AS publisher_name, publishers.location
+FROM books
+INNER JOIN publishers ON books.publisher_id = publishers.id;
 ```
 
 <br>
@@ -50,6 +65,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT publishers.id AS publisher_id, publishers.name AS publisher_name, books.title AS book_title
+FROM publishers
+LEFT JOIN books ON publishers.id = books.publisher_id;
 ```
 
 <br>
@@ -58,6 +76,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT publishers.name AS publisher_name, books.id AS book_id, books.title AS book_title
+FROM publishers
+RIGHT JOIN books ON publishers.id = books.publisher_id;
 ```
 
 <br>
@@ -66,6 +87,17 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT 
+    books.id AS book_id, 
+    books.title AS book_title, 
+    authors.id AS author_id, 
+    authors.name AS author_name, 
+    publishers.id AS publisher_id, 
+    publishers.name AS publisher_name
+FROM books
+FULL JOIN authors ON books.author_id = authors.id
+FULL JOIN publishers ON books.publisher_id = publishers.id;
+
 ```
 
 <br>
