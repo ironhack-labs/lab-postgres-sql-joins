@@ -8,6 +8,7 @@
 
 ```sql
 -- Your Query Goes Here
+Select title FROM books WHERE author_id IS NOT NULL
 ```
 
 <br>
@@ -16,6 +17,7 @@
 
 ```sql
 -- Your Query Goes Here
+Select authors.name, books.title FROM authors LEFT JOIN books ON books.author_id=authors.id
 ```
 
 <br>
@@ -24,6 +26,7 @@
 
 ```sql
 -- Your Query Goes Here
+Select books.title, authors.name FROM books RIGHT JOIN authors ON books.author_id=authors.id
 ```
 
 <br>
@@ -32,6 +35,7 @@
 
 ```sql
 -- Your Query Goes Here
+Select * FROM books FULL JOIN authors ON books.author_id=authors.id
 ```
 
 <br>
@@ -42,6 +46,7 @@
 
 ```sql
 -- Your Query Goes Here
+Select books.title, publishers.name, publishers.location FROM books INNER JOIN publishers ON books.publisher_id = publishers.id
 ```
 
 <br>
@@ -50,6 +55,7 @@
 
 ```sql
 -- Your Query Goes Here
+Select publishers.name, books.title FROM publishers LEFT JOIN books ON books.publisher_id = publishers.id
 ```
 
 <br>
@@ -58,6 +64,7 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT publishers.name, books.title FROM books RIGHT JOIN publishers ON books.publisher_id = publishers.id
 ```
 
 <br>
@@ -66,6 +73,7 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT * FROM books FULL JOIN publishers ON books.publisher_id = publishers.id FULL JOIN authors on books.author_id=authors.id
 ```
 
 <br>
