@@ -8,6 +8,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT * from books
+inner join authors
+on books.author_id = authors.id;
 ```
 
 <br>
@@ -16,6 +19,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT * from authors
+left join books
+ON
+    authors.id = books.author_id;
 ```
 
 <br>
@@ -24,6 +31,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT * from authors
+right join books
+ON
+    authors.id = books.author_id;
 ```
 
 <br>
@@ -32,6 +43,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT * from authors
+full join books
+ON
+    authors.id = books.author_id;
 ```
 
 <br>
