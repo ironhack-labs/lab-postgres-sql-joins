@@ -97,11 +97,11 @@ CREATE TABLE authors (
     birth_year DATE
 );
 
-CREATE TABLE publishers (
+CREATE TABLE authors (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    location VARCHAR(100),
-    founded_year INT
+    nationality VARCHAR(50),
+    birth_year DATE
 );
 
 CREATE TABLE books (
