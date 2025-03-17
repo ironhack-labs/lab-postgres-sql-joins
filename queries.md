@@ -9,7 +9,7 @@
 ```sql
 -- Your Query Goes Here
 ```
-
+SELECT books.title, authors.name FROM books INNER JOIN authors ON books.author_id = authors.id;
 <br>
 
 2. Using a **LEFT JOIN**, list all authors (left table) and their corresponding books on the (right table). The result should include all authors, including those who don't have any books assigned.
@@ -17,7 +17,7 @@
 ```sql
 -- Your Query Goes Here
 ```
-
+SELECT authors.name, books.title FROM authors LEFT JOIN books ON books.author_id = authors.id;
 <br>
 
 3. Using a **RIGHT JOIN**, list all books (right table) and their corresponding authors on the (left table). The result should include books without assigned authors.
@@ -25,7 +25,7 @@
 ```sql
 -- Your Query Goes Here
 ```
-
+SELECT authors.name, books.title FROM authors RIGHT JOIN books ON authors.id = books.author_id;
 <br>
 
 4. Using a **FULL JOIN**, list all records from the `books` and `authors` tables. The result should include all details from both tables, even if there are no match.
@@ -33,6 +33,8 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT * FROM authors FULL JOIN books ON authors.id = books.author_id;
+
 
 <br>
 
@@ -51,7 +53,9 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT books.title, publishers.name, publishers.location FROM books INNER JOIN publishers ON books.publisher_id = publisher_id;
 
+SELECT * FROM publishers LEFT JOIN books ON books.publisher_id = publisher_id;
 <br>
 
 3. Using a **RIGHT JOIN**, list all books (right table) and their corresponding publishers on the (left table). The result should include all books, even those without a linked publisher.
@@ -59,7 +63,7 @@
 ```sql
 -- Your Query Goes Here
 ```
-
+SELECT * FROM books RIGHT JOIN publishers ON books.publisher_id = publisher_id;
 <br>
 
 4. Using a **FULL JOIN**, list all records from the `authors`, `books`, and `publishers` tables. The result should include all records from the three tables, even if there are no matches between them.
@@ -67,5 +71,5 @@
 ```sql
 -- Your Query Goes Here
 ```
-
+SELECT * FROM authors FULL JOIN books ON authors.id = books.author_id FULL JOIN publishers ON books.publisher_id = publishers.id ;
 <br>
