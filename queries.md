@@ -8,6 +8,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM books
+INNER JOIN authors
+ON books.author_id=authors.id;
 ```
 
 <br>
@@ -16,6 +20,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM authors
+LEFT JOIN books
+ON authors.id = books.author_id;
 ```
 
 <br>
@@ -24,6 +32,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM books
+RIGHT JOIN authors
+ON books.author_id = authors.id;
 ```
 
 <br>
@@ -32,16 +44,22 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM books
+FULL OUTER JOIN authors
+ON books.author_id = authors.id;
 ```
 
 <br>
-
-## BONUS: Iteration 3 - Joins (continued)
-
+@@ -41,31 +53,45 @@
 1. Using an **INNER JOIN**, list all books (left table) and their corresponding publishers on the (right table). The result should include the book's title, publisher's name, and location.
 
 ```sql
 -- Your Query Goes Here
+SELECT books.title, publishers.name, publishers.location
+FROM books
+INNER JOIN publishers
+ON books.publisher_id=publishers.id;
 ```
 
 <br>
@@ -50,6 +68,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM publishers
+LEFT JOIN books
+ON publishers.id=books.publisher_id;
 ```
 
 <br>
@@ -58,6 +80,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM publishers
+RIGHT JOIN books
+ON books.publisher_id = publishers.id;
 ```
 
 <br>
@@ -66,6 +92,12 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM authors
+FULL OUTER JOIN books
+ON authors.id = books.author_id
+FULL OUTER JOIN publishers
+ON publishers.id = books.publisher_id;
 ```
 
 <br>
