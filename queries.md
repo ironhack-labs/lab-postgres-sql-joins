@@ -8,6 +8,9 @@
 
 ```sql
 -- Your Query Goes Here
+select * from books
+inner join authors
+on books.author_id = authors.id;
 ```
 
 <br>
@@ -15,7 +18,9 @@
 2. Using a **LEFT JOIN**, list all authors (left table) and their corresponding books on the (right table). The result should include all authors, including those who don't have any books assigned.
 
 ```sql
--- Your Query Goes Here
+select * from authors
+left join books
+on authors.id = books.author_id;
 ```
 
 <br>
@@ -24,6 +29,12 @@
 
 ```sql
 -- Your Query Goes Here
+
+select * from books
+right join authors
+on books.author_id = authors.id;
+
+
 ```
 
 <br>
@@ -32,6 +43,10 @@
 
 ```sql
 -- Your Query Goes Here
+select * from books
+full join authors
+on books.author_id = authors.id;
+
 ```
 
 <br>
@@ -42,6 +57,11 @@
 
 ```sql
 -- Your Query Goes Here
+select books.title, publishers.name, publishers.location
+from books
+inner join publishers
+on books.publisher_id = publishers.id
+
 ```
 
 <br>
@@ -50,6 +70,10 @@
 
 ```sql
 -- Your Query Goes Here
+select *
+from publishers
+left join books
+on publishers.id = books.publisher_id
 ```
 
 <br>
@@ -58,6 +82,11 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+FROM publishers
+RIGHT JOIN books
+ON publishers.id = books.publisher_id;
+
 ```
 
 <br>
@@ -66,6 +95,13 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT *
+
+FROM books
+full join publishers
+ON  books.publisher_id = publishers.id
+full join authors
+on books.author_id = authors.id
 ```
 
 <br>
