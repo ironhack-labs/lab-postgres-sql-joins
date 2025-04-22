@@ -8,6 +8,13 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT * FROM books INNER JOIN authors ON books.author_id = authors.id;
+
+-- also a solution:
+-- SELECT books.*, authors.*
+-- FROM books
+-- INNER JOIN authors ON books.author_id = authors.id
+
 ```
 
 <br>
@@ -16,6 +23,15 @@
 
 ```sql
 -- Your Query Goes Here
+
+SELECT authors.*, books.*
+FROM authors
+LEFT JOIN books ON authors.id = books.author_id;
+
+-- or with just the *: 
+-- SELECT *
+-- FROM authors
+-- LEFT JOIN books ON authors.id = books.author_id;
 ```
 
 <br>
@@ -24,6 +40,12 @@
 
 ```sql
 -- Your Query Goes Here
+
+SELECT * 
+FROM authors 
+RIGHT JOIN books ON authors.id = books.author_id;
+
+
 ```
 
 <br>
@@ -32,6 +54,10 @@
 
 ```sql
 -- Your Query Goes Here
+
+SELECT *
+FROM authors
+FULL JOIN books ON authors.id = books.author_id;
 ```
 
 <br>
@@ -42,6 +68,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT books.title, publishers.name 
+AS publisher_name, publishers.location 
+FROM books INNER JOIN publishers ON books.publisher_id = publishers.id;
+
 ```
 
 <br>
@@ -50,6 +80,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT publishers.*, books.* 
+FROM publishers 
+LEFT JOIN books ON publishers.id = books.publisher_id;
+
 ```
 
 <br>
@@ -58,6 +92,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT books.*, publishers.name 
+AS publisher_name 
+FROM publishers 
+RIGHT JOIN books ON publishers.id = books.publisher_id;
 ```
 
 <br>
@@ -66,6 +104,10 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT * 
+FROM books 
+FULL JOIN authors ON books.author_id = authors.id 
+FULL JOIN publishers ON books.publisher_id = publishers.id;
 ```
 
 <br>
