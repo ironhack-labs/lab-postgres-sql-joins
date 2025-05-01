@@ -10,6 +10,10 @@
 -- Your Query Goes Here
 ```
 
+select \*
+from books b
+inner join authors a on b.author_id = a.id
+
 <br>
 
 2. Using a **LEFT JOIN**, list all authors (left table) and their corresponding books on the (right table). The result should include all authors, including those who don't have any books assigned.
@@ -17,6 +21,10 @@
 ```sql
 -- Your Query Goes Here
 ```
+
+select \*
+from authors a
+left join books b on b.author_id = a.id
 
 <br>
 
@@ -26,6 +34,10 @@
 -- Your Query Goes Here
 ```
 
+select \*
+from authors a
+right join books b on b.author_id = a.id
+
 <br>
 
 4. Using a **FULL JOIN**, list all records from the `books` and `authors` tables. The result should include all details from both tables, even if there are no match.
@@ -34,6 +46,9 @@
 -- Your Query Goes Here
 ```
 
+select \*
+from authors a
+full join books b on b.author_id = a.id
 <br>
 
 ## BONUS: Iteration 3 - Joins (continued)
@@ -44,6 +59,10 @@
 -- Your Query Goes Here
 ```
 
+select \*
+from books b
+inner join publishers p on b.publisher_id = p.id
+
 <br>
 
 2. Using a **LEFT JOIN**, list all publishers (left table) and any books they have published on the (right table). The result should include all publishers, including those who haven't published any books.
@@ -52,6 +71,9 @@
 -- Your Query Goes Here
 ```
 
+select \*
+from publishers p
+left join books b on b.publisher_id = p.id
 <br>
 
 3. Using a **RIGHT JOIN**, list all books (right table) and their corresponding publishers on the (left table). The result should include all books, even those without a linked publisher.
@@ -60,6 +82,10 @@
 -- Your Query Goes Here
 ```
 
+select \*
+from publishers p
+right join books b on b.publisher_id = p.id
+
 <br>
 
 4. Using a **FULL JOIN**, list all records from the `authors`, `books`, and `publishers` tables. The result should include all records from the three tables, even if there are no matches between them.
@@ -67,5 +93,10 @@
 ```sql
 -- Your Query Goes Here
 ```
+
+select \*
+from books b
+full join authors a on b.author_id = a.id
+full join publishers p on b.publisher_id = p.id
 
 <br>
