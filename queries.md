@@ -7,7 +7,9 @@
 1. Using an **INNER JOIN**, list all books (left table) that have an assigned author (right table). The result should include only books with assigned authors.
 
 ```sql
--- Your Query Goes Here
+SELECT books.*, authors.name AS author_name
+FROM books
+INNER JOIN authors ON books.author_id = authors.id;
 ```
 
 <br>
@@ -15,7 +17,9 @@
 2. Using a **LEFT JOIN**, list all authors (left table) and their corresponding books on the (right table). The result should include all authors, including those who don't have any books assigned.
 
 ```sql
--- Your Query Goes Here
+SELECT authors.*, books.title AS book_title
+FROM authors
+LEFT JOIN books ON books.author_id = authors.id;
 ```
 
 <br>
@@ -23,7 +27,9 @@
 3. Using a **RIGHT JOIN**, list all books (right table) and their corresponding authors on the (left table). The result should include books without assigned authors.
 
 ```sql
--- Your Query Goes Here
+SELECT books.*, authors.name AS author_name
+FROM authors
+RIGHT JOIN books ON books.author_id = authors.id;
 ```
 
 <br>
@@ -31,7 +37,9 @@
 4. Using a **FULL JOIN**, list all records from the `books` and `authors` tables. The result should include all details from both tables, even if there are no match.
 
 ```sql
--- Your Query Goes Here
+SELECT books.title AS book_title, authors.name AS author_name
+FROM books
+FULL JOIN authors ON books.author_id = authors.id;
 ```
 
 <br>
