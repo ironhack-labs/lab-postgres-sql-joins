@@ -10,6 +10,10 @@
 -- Your Query Goes Here
 ```
 
+SELECT books.title, authors.name AS author_name
+FROM books
+INNER JOIN authors ON books.author_id = authors.id;
+
 <br>
 
 2. Using a **LEFT JOIN**, list all authors (left table) and their corresponding books on the (right table). The result should include all authors, including those who don't have any books assigned.
@@ -17,6 +21,10 @@
 ```sql
 -- Your Query Goes Here
 ```
+
+SELECT authors.name AS author_name, books.title AS book_title
+FROM authors
+LEFT JOIN books ON authors.id = books.author_id
 
 <br>
 
@@ -26,6 +34,9 @@
 -- Your Query Goes Here
 ```
 
+SELECT books.title AS book, authors.name AS author
+FROM books
+RIGHT JOIN authors ON books.author_id = authors.id
 <br>
 
 4. Using a **FULL JOIN**, list all records from the `books` and `authors` tables. The result should include all details from both tables, even if there are no match.
@@ -34,6 +45,9 @@
 -- Your Query Goes Here
 ```
 
+SELECT books._, authors._
+FROM books  
+FULL JOIN authors ON books.id = authors.id
 <br>
 
 ## BONUS: Iteration 3 - Joins (continued)
