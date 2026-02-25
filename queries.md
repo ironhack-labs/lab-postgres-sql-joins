@@ -8,6 +8,7 @@
 
 ```sql
 -- Your Query Goes Here
+select * from books inner join authors on books.author_id = author.id where books.author_id is not null;
 ```
 
 <br>
@@ -16,6 +17,7 @@
 
 ```sql
 -- Your Query Goes Here
+select authors, books from authors left join books on books.author_id = authors.id;
 ```
 
 <br>
@@ -24,6 +26,8 @@
 
 ```sql
 -- Your Query Goes Here
+
+select authors, books from authors right join books on books.author_id = authors.id;
 ```
 
 <br>
@@ -32,6 +36,7 @@
 
 ```sql
 -- Your Query Goes Here
+select authors, books from authors full join books on books.author_id = authors.id;
 ```
 
 <br>
@@ -42,6 +47,7 @@
 
 ```sql
 -- Your Query Goes Here
+select title, name, location from books inner join publishers on books.publisher_id = publishers.id;
 ```
 
 <br>
@@ -50,6 +56,7 @@
 
 ```sql
 -- Your Query Goes Here
+select * from publishers left join books on books.publisher_id = publishers.id;
 ```
 
 <br>
@@ -58,6 +65,7 @@
 
 ```sql
 -- Your Query Goes Here
+select * from publishers right join books on books.publisher_id = publishers.id;
 ```
 
 <br>
@@ -65,7 +73,11 @@
 4. Using a **FULL JOIN**, list all records from the `authors`, `books`, and `publishers` tables. The result should include all records from the three tables, even if there are no matches between them.
 
 ```sql
--- Your Query Goes Here
+-- Your Query Goes 
+SELECT *
+FROM authors
+FULL JOIN books ON authors.id = books.author_id
+FULL JOIN publishers ON books.publisher_id = publishers.id;
 ```
 
 <br>
