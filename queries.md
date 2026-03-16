@@ -9,6 +9,10 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT books.title, authors.name
+FROM books
+INNER JOIN authors
+ON books.author_id = authors.id;
 
 <br>
 
@@ -17,6 +21,10 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT authors.name, books.title
+FROM authors
+LEFT JOIN books
+ON authors.id = books.author_id;
 
 <br>
 
@@ -26,6 +34,11 @@
 -- Your Query Goes Here
 ```
 
+SELECT books.title, authors.name
+FROM authors
+RIGHT JOIN books
+ON authors.id = books.author_id;
+
 <br>
 
 4. Using a **FULL JOIN**, list all records from the `books` and `authors` tables. The result should include all details from both tables, even if there are no match.
@@ -33,6 +46,11 @@
 ```sql
 -- Your Query Goes Here
 ```
+
+SELECT books.title, authors.name
+FROM books
+FULL JOIN authors
+ON books.author_id = authors.id;
 
 <br>
 
