@@ -8,6 +8,7 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT books.title, authors.name FROM books INNER JOIN authors ON books.author_id = authors.id;
 ```
 
 <br>
@@ -16,6 +17,7 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT authors.name, books.title FROM authors LEFT JOIN books ON authors.id = books.author_id;
 ```
 
 <br>
@@ -24,6 +26,9 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT authors.name, books.title FROM authors RIGHT JOIN books ON authors.id = books.author_id;
+
+
 ```
 
 <br>
@@ -31,7 +36,8 @@
 4. Using a **FULL JOIN**, list all records from the `books` and `authors` tables. The result should include all details from both tables, even if there are no match.
 
 ```sql
--- Your Query Goes Here
+-- Your Query Goes HereS
+SELECT * FROM authors FULL JOIN books ON authors.id = books.author_id;
 ```
 
 <br>
@@ -42,6 +48,7 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT books.title, publishers.name, publishers.location FROM books INNER JOIN publishers ON books.publisher_id = publishers.id;
 ```
 
 <br>
@@ -50,6 +57,7 @@
 
 ```sql
 -- Your Query Goes Here
+SELECT publisher.name, books.title FROM publishers LEFT JOIN books ON publishers.id = books.publisher_id;
 ```
 
 <br>
