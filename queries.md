@@ -9,6 +9,13 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT 
+    books.id,
+    books.title,
+    authors.name AS author_name
+FROM books
+INNER JOIN authors
+    ON books.author_id = authors.id;
 
 <br>
 
@@ -18,6 +25,14 @@
 -- Your Query Goes Here
 ```
 
+SELECT
+    authors.id,
+    authors.name AS author_name,
+    books.title
+FROM authors
+LEFT JOIN books
+    ON books.author_id = authors.id;
+
 <br>
 
 3. Using a **RIGHT JOIN**, list all books (right table) and their corresponding authors on the (left table). The result should include books without assigned authors.
@@ -25,6 +40,13 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT 
+    books.id,
+    books.title,
+    authors.name AS author_name
+FROM authors
+right JOIN books
+    ON books.author_id = authors.id;
 
 <br>
 
@@ -33,7 +55,10 @@
 ```sql
 -- Your Query Goes Here
 ```
-
+SELECT *
+FROM books
+FULL JOIN authors
+    ON books.author_id = authors.id;
 <br>
 
 ## BONUS: Iteration 3 - Joins (continued)
