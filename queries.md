@@ -9,6 +9,14 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT 
+    books.id AS book_id,
+    books.title,
+    books.publish_date,
+    authors.name AS author_name,
+    authors.nationality
+FROM books
+INNER JOIN authors ON books.author_id = authors.id;
 
 <br>
 
@@ -18,6 +26,16 @@
 -- Your Query Goes Here
 ```
 
+SELECT 
+    authors.id AS author_id,
+    authors.name AS author_name,
+    authors.nationality,
+    books.id AS book_id,
+    books.title AS book_title
+FROM authors
+LEFT JOIN books ON authors.id = books.author_id;
+
+
 <br>
 
 3. Using a **RIGHT JOIN**, list all books (right table) and their corresponding authors on the (left table). The result should include books without assigned authors.
@@ -26,6 +44,16 @@
 -- Your Query Goes Here
 ```
 
+SELECT 
+    authors.id AS author_id,
+    authors.name AS author_name,
+    books.id AS book_id,
+    books.title AS book_title,
+    books.publish_date
+FROM authors
+RIGHT JOIN books ON authors.id = books.author_id;
+
+
 <br>
 
 4. Using a **FULL JOIN**, list all records from the `books` and `authors` tables. The result should include all details from both tables, even if there are no match.
@@ -33,6 +61,16 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT 
+    authors.id AS author_id,
+    authors.name AS author_name,
+    authors.nationality,
+    authors.birth_year,
+    books.id AS book_id,
+    books.title AS book_title,
+    books.publish_date
+FROM books
+FULL JOIN authors ON books.author_id = authors.id;
 
 <br>
 
@@ -44,6 +82,14 @@
 -- Your Query Goes Here
 ```
 
+SELECT 
+    books.title AS book_title,
+    publishers.name AS publisher_name,
+    publishers.location AS publisher_location
+FROM books
+INNER JOIN publishers ON books.publisher_id = publishers.id;
+
+
 <br>
 
 2. Using a **LEFT JOIN**, list all publishers (left table) and any books they have published on the (right table). The result should include all publishers, including those who haven't published any books.
@@ -51,6 +97,14 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT 
+    publishers.id AS publisher_id,
+    publishers.name AS publisher_name,
+    publishers.location AS publisher_location,
+    books.id AS book_id,
+    books.title AS book_title
+FROM publishers
+LEFT JOIN books ON publishers.id = books.publisher_id;
 
 <br>
 
@@ -59,6 +113,15 @@
 ```sql
 -- Your Query Goes Here
 ```
+SELECT 
+    publishers.id AS publisher_id,
+    publishers.name AS publisher_name,
+    publishers.location AS publisher_location,
+    books.id AS book_id,
+    books.title AS book_title,
+    books.publish_date
+FROM publishers
+RIGHT JOIN books ON publishers.id = books.publisher_id;
 
 <br>
 
